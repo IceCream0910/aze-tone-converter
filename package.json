@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^11.3.31",
+    "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.7"
+    "react-hot-toast": "^2.4.1",
+    "react-spring-bottom-sheet": "^3.4.1",
+    "react-text-transition": "^3.1.0"
   }
 }
