@@ -1,21 +1,25 @@
 # 아재 말투 변환기
 텍스트를 입력하면 아재 말투로 변환해줍니다.
+
 [직접 원하는 텍스트를 바꿔보세요](https://aze.yuntae.in)
 
 ## 기술 스택
 Frontend: Next.js
+
 Deployment: Vercel
+
 API: OpenAI GPT-4o-mini
 
 ## 개발 과정
 ### 아재 말투의 특징
 - 쉼표(,)와 마침표(.)를 많이 사용한다.
-- 물결(~)이나 '^^', '~!' 등의 특수문자를 자주 사용한다.
+- 물결(\~)이나 '^^', '~!' 등의 특수문자를 자주 사용한다.
 - '~습니다'를 사용하려는 경우 '~읍니다'로 작성한다.
 - 띄어쓰기는 되도록 생략한다.
 
 ### AI 모델 Fine-Tuning
-1. 학습 Data 생성
+#### 학습 Data 생성
+
 일반적인 문체의 문장과 아재 말투로 변환된 문장 쌍으로 구성된 데이터셋 생성
 ```json
 {"messages": [{"role": "user", "content": "오늘 날씨가 좋아요. 나들이를 갑시다"}, {"role": "assistant", "content": "오늘,날씨가..,,좋아요,^^..나들이를..갑시다~!~"}]}
@@ -33,7 +37,7 @@ API: OpenAI GPT-4o-mini
 (후략)
 ```
 
-2. 학습 진행
+#### 학습 진행
 GPT-4o-mini 모델을 기반으로 Fine-Tuning 진행
 ![image](https://i.imgur.com/jl5yXaJ.png)
 
