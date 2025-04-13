@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reacticons/ionicons": "^7.1.0",
     "framer-motion": "^11.3.31",
     "next": "14.2.7",
     "react": "^18",

@@ -4,7 +4,10 @@ import { BottomSheet } from 'react-spring-bottom-sheet';
 import 'react-spring-bottom-sheet/dist/style.css';
 import TextTransition from './components/textTransition';
 import toast, { Toaster } from 'react-hot-toast';
+import IonIcon from '@reacticons/ionicons';
+import dynamic from 'next/dynamic';
 
+const AdSense = dynamic(() => import('./components/adSense'), { ssr: false });
 
 export default function Home() {
   const [aboutModalOpen, setAboutModalOpen] = useState(false);
@@ -14,7 +17,7 @@ export default function Home() {
 
   const [isConverted, setIsConverted] = useState(false);
   const [convertedText, setConvertedText] = useState('');
-  const [isLoading, setIsLoading] = useState(false); // 로딩 상태 추가
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     adjustFontSize();
@@ -99,7 +102,9 @@ export default function Home() {
 
 
       <div style={{ position: 'fixed', top: '20px', left: 0, padding: '0 20px', width: '100%', display: 'flex', justifyContent: 'end' }}>
-        <button style={{ padding: '5px 10px', fontSize: '20px' }} onClick={handleAboutOpen}>🛈</button>
+        <button style={{ padding: '5px 10px', fontSize: '20px' }} onClick={handleAboutOpen}>
+          <IonIcon name="information-circle-outline" />
+        </button>
       </div>
 
       <div style={{ position: 'fixed', bottom: '20px', left: 0, padding: '0 20px', width: '100%', display: 'flex', justifyContent: 'space-between' }}>
@@ -115,6 +120,10 @@ export default function Home() {
         </button>
       </div>
 
+      <div style={{ position: 'fixed', bottom: '80px', left: 0, padding: '0 20px', width: '100%', height: '100px', maxHeight: '200px', display: 'flex', justifyContent: 'center' }}>
+        <AdSense adClient="ca-pub-7178712602934912" adSlot="8415533910" />
+      </div>
+
       {
         aboutModalOpen &&
         <div className="modal">
@@ -123,16 +132,14 @@ export default function Home() {
             <h3>아재 말투 변환기</h3>
             텍스트를 입력하면 아재 말투로 변환해줍니다.<br /><br />
 
-            <h3>개발 기술 스택</h3>
-            Frontend: Next.js<br />
-            Deployment: Vercel<br />
-            API: OpenAI GPT-4o-mini<br /><br />
-
             <h3>아재,,말투가.,,뭐인가요~?</h3>
             - 쉼표(,)와 마침표(.)를 많이 사용한다.<br />
             - 물결(~)이나 '^^', '~!' 등의 특수문자를 자주 사용한다.<br />
             - '~습니다'를 사용하려는 경우 '~읍니다'로 작성한다.<br />
             - 띄어쓰기는 되도록 생략한다.<br /><br />
+
+            <span className="emoji">⚠️</span> 입력한 텍스트는 서비스 개선을 위해 저장됩니다. 민감한 개인정보를 입력하지 마십시오.
+            <br /><br />
 
             <h3>개발자</h3>
             <a href="https://yuntae.in/" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>윤태인</a>&nbsp;&nbsp;
@@ -149,17 +156,14 @@ export default function Home() {
           <h3>아재 말투 변환기</h3>
           텍스트를 입력하면 아재 말투로 변환해줍니다.<br /><br />
 
-          <h3>개발 기술 스택</h3>
-          Frontend: Next.js<br />
-          Deployment: Vercel<br />
-          API: OpenAI GPT-4o-mini<br /><br />
-
           <h3>아재,,말투가.,,뭐인가요~?</h3>
           - 쉼표(,)와 마침표(.)를 많이 사용한다.<br />
           - 물결(~)이나 '^^', '~!' 등의 특수문자를 자주 사용한다.<br />
           - '~습니다'를 사용하려는 경우 '~읍니다'로 작성한다.<br />
           - 띄어쓰기는 되도록 생략한다.<br /><br />
 
+          <span className="emoji">⚠️</span> 입력한 텍스트는 서비스 개선을 위해 저장됩니다. 민감한 개인정보를 입력하지 마십시오.
+          <br /><br />
           <h3>개발자</h3>
           <a href="https://yuntae.in/" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>윤태인</a>&nbsp;&nbsp;
           <a href="https://github.com/IceCream0910/aze-tone-converter" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>Github</a><br /><br /><br />
