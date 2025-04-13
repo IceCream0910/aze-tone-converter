@@ -102,13 +102,16 @@ export default function Home() {
 
 
       <div style={{ position: 'fixed', top: '20px', left: 0, padding: '0 20px', width: '100%', display: 'flex', justifyContent: 'end' }}>
-        <button style={{ padding: '5px 10px', fontSize: '20px' }} onClick={handleAboutOpen}>
-          <IonIcon name="information-circle-outline" />
-        </button>
       </div>
 
       <div style={{ position: 'fixed', bottom: '20px', left: 0, padding: '0 20px', width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-        <button className="filed" onClick={() => copy()}><span className="emoji">📋</span>&nbsp;복사</button>
+        <div>
+          <button style={{ padding: '5px 10px', fontSize: '20px' }} onClick={handleAboutOpen}>
+            <IonIcon name="information-circle-outline" style={{ position: 'relative', top: '5px' }} />
+          </button>
+          <button className="filed" onClick={() => copy()}><span className="emoji">📋</span>&nbsp;복사</button>
+        </div>
+
         {isConverted && <button className="filed" onClick={() => convert()} style={{ padding: '10px 15px' }}>⟳ 재생성</button>}
         <button className="filed" onClick={() => isConverted ? setIsConverted(false) : convert()} style={{ background: 'var(--primary-color)', fontWeight: 'bold', padding: '10px 15px' }}>
           {isLoading ? (<>
@@ -120,8 +123,8 @@ export default function Home() {
         </button>
       </div>
 
-      <div style={{ position: 'fixed', bottom: '80px', left: 0, padding: '0 20px', width: '100%', height: '100px', maxHeight: '200px', display: 'flex', justifyContent: 'center' }}>
-        <AdSense adClient="ca-pub-7178712602934912" adSlot="8415533910" />
+      <div style={{ position: 'fixed', top: '20px', left: 0, padding: '0 20px', width: '100%', height: '100px', maxHeight: '200px', display: 'flex', justifyContent: 'center' }}>
+        <AdSense adClient="ca-pub-7178712602934912" adSlot="3964977349" />
       </div>
 
       {
