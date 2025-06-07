@@ -77,7 +77,7 @@ export default function Home() {
   }
 
   return (
-    <main style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column' }}>
+    <main style={{ display: 'flex', justifyContent: 'start', alignItems: 'center', height: '100vh', flexDirection: 'column', overflow: 'hidden' }}>
       <Toaster
         toastOptions={{
           style: {
@@ -89,7 +89,7 @@ export default function Home() {
 
 
 
-      <div style={{ padding: '0 20px', width: '100%', height: '30dvh', maxHeight: '200px', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ width: '100%', height: '15dvh', display: 'flex', justifyContent: 'center' }}>
         <AdSense adClient="ca-pub-7178712602934912" adSlot="3964977349" />
       </div>
 
@@ -101,6 +101,7 @@ export default function Home() {
           display: `${isConverted ? 'none' : 'block'}`,
           fontSize: `${fontSize}px`,
           textAlign: 'center',
+          height: '80dvh'
         }}
         onChange={adjustFontSize}
         placeholder="문장을,,,입력해라,,~!"

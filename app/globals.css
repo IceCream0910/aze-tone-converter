@@ -291,7 +291,6 @@ input[type="checkbox"]:checked {
 
 input[type=text] {
   width: 100dvw;
-  height: 100dvh;
   border: none;
   outline: none;
   background-color: transparent;
