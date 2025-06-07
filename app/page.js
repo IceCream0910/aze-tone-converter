@@ -86,6 +86,14 @@ export default function Home() {
             borderRadius: '15px',
           },
         }} />
+
+
+
+      <div style={{ padding: '0 20px', width: '100%', height: '30dvh', maxHeight: '200px', display: 'flex', justifyContent: 'center' }}>
+        <AdSense adClient="ca-pub-7178712602934912" adSlot="3964977349" />
+      </div>
+
+
       <input
         ref={inputRef}
         type="text"
@@ -99,10 +107,6 @@ export default function Home() {
       />
 
       {isConverted && <TextTransition fontSize={fontSize} text={convertedText} onCopy={copy} />}
-
-
-      <div style={{ position: 'fixed', top: '20px', left: 0, padding: '0 20px', width: '100%', display: 'flex', justifyContent: 'end' }}>
-      </div>
 
       <div style={{ position: 'fixed', bottom: '20px', left: 0, padding: '0 20px', width: '100%', display: 'flex', justifyContent: 'space-between' }}>
         <div>
@@ -121,10 +125,6 @@ export default function Home() {
           </>
           ) : isConverted ? '처음으로' : '변환 →'}
         </button>
-      </div>
-
-      <div style={{ position: 'fixed', top: '20px', left: 0, padding: '0 20px', width: '100%', height: '100px', maxHeight: '200px', display: 'flex', justifyContent: 'center' }}>
-        <AdSense adClient="ca-pub-7178712602934912" adSlot="3964977349" />
       </div>
 
       {
