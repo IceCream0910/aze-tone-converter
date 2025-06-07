@@ -28,7 +28,7 @@ const TextTransition = ({ fontSize = 16, text, onCopy }) => {
     };
 
     return (
-        <div style={{ display: 'inline-flex', flexWrap: 'wrap', wordBreak: 'break-word', whiteSpace: 'pre-wrap', margin: '0 20px' }} onClick={handleTextClick}>
+        <div style={{ display: 'inline-flex', flexWrap: 'wrap', wordBreak: 'break-word', whiteSpace: 'pre-wrap', margin: '0 20px', height: '80dvh', alignContent: 'center' }} onClick={handleTextClick}>
             {animatedText.map((item) => (
                 <motion.span
                     key={item.key}
