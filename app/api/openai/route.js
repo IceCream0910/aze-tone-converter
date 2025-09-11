@@ -8,7 +8,7 @@ export async function POST(req) {
             return NextResponse.json({ error: 'Missing text field' }, { status: 400 });
         }
 
-        const modelId = 'gemini-2.0-flash-lite';
+        const modelId = 'gemini-2.5-flash-lite';
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelId}:generateContent`;
 
         const headers = {
