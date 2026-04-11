@@ -11,7 +11,7 @@
   "dependencies": {
     "@reacticons/ionicons": "^7.1.0",
     "framer-motion": "^11.3.31",
-    "next": "16.1.5",
+    "next": "16.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
